@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Ex 4: De dat a și b din input. După click afișați produsul lor</p>
+<p>A: <input type="number" ng-model="a"></p>
+<p>B: <input type="number" ng-model="b"></p>
+
+<button ng-click="rez = a * b">Calculeaza Produs</button>
+
+<p>{{ rez }}</p>
+
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.rez = 0;
+});
+</script> 
+
+</body>
+</html>

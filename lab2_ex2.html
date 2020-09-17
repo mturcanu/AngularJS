@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Ex2: Un Service personal care ridica X la patrat.</p>
+
+<p><input type="number" ng-model="numar" ng-change="calculeaza()"></p>
+
+<p>{{numar}} la patrat este:</p>
+
+<h1>{{rezultat}}</h1>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+
+app.service('patrat', function() {
+    this.myFunc = function (x) {
+        return x*x;
+    }
+});
+app.controller('myCtrl', function($scope, patrat) {
+	$scope.calculeaza = function(){
+          $scope.rezultat = patrat.myFunc($scope.numar);
+      }
+  
+});
+</script>
+
+</body>
+</html>

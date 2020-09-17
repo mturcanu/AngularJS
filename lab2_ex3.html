@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Ex3: Obiect select din lista studentilor. Afisarea alegerea utilizatorului</p>
+
+<select ng-model="studentSelectat" ng-options="x.nume for x in numes">
+</select>
+
+<p>Studentul Ales:</p>
+<h3>{{studentSelectat.nume}} {{studentSelectat.prenume}} {{studentSelectat.nota}}</h3>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.numes = [
+        {nume:'Mihai',prenume:'Turcanu',nota:7.12},
+        {nume:'Adrian',prenume:'Corobca',nota:8.19},
+        {nume:'Vasile',prenume:'Godorogea',nota:9.1},
+        {nume:'Alexei',prenume:'Cioban',nota:6.57},
+        {nume:'Tatiana',prenume:'Savin',nota:9.99},
+        {nume:'Anastasia',prenume:'Temciuc',nota:10},
+        {nume:'Vladislav',prenume:'Gorceag',nota:4.99},
+        {nume:'Cristina',prenume:'Savitchi',nota:5.01}
+        ];
+});
+</script>
+
+</body>
+</html>

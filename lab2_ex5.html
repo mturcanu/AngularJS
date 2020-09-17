@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+<p>Ex5: 5.	De dat a și b din input. Determinați dacă a se împarte la b fără rest</p>
+<p>A: <input type="number" ng-model="a" ng-change="ascunde()"></p>
+<p>B: <input type="number" ng-model="b" ng-change="ascunde()"></p>
+
+<!--<button ng-click="rest = a % b">Se Imparte fara rest?</button> -->
+
+<p ng-hide="rest">{{a}} / {{b}} - se imparte fara rest</p>
+<p ng-show="rest">{{a}} / {{b}} - se imparte cu rest</p>
+
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.ascunde = function(){
+          $scope.rest = $scope.a % $scope.b;
+      }
+});
+</script> 
+
+</body>
+</html>

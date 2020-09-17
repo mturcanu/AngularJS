@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+<p>Ex1: Introduceti numele:</p>
+
+<p><input type="text" ng-model="filtru_nume"></p>
+
+<ul>
+  <li ng-repeat="x in numes | filter:filtru_nume">
+    {{ x.nume }} {{x.prenume}} {{x.nota}}
+  </li>
+</ul>
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    $scope.numes = [
+        {nume:'Mihai',prenume:'Turcanu',nota:7.12},
+        {nume:'Adrian',prenume:'Corobca',nota:8.19},
+        {nume:'Vasile',prenume:'Godorogea',nota:9.1},
+        {nume:'Alexei',prenume:'Cioban',nota:6.57},
+        {nume:'Tatiana',prenume:'Savin',nota:9.99},
+        {nume:'Anastasia',prenume:'Temciuc',nota:10},
+        {nume:'Vladislav',prenume:'Gorceag',nota:4.99},
+        {nume:'Cristina',prenume:'Savitchi',nota:5.01}
+        ];
+});
+</script>
+
+</body>
+</html>

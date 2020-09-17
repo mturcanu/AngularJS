@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<p>Ex 6 si 7: Tabelul studentilor sortati dupa Nota descrescator:</p>
+
+<div ng-app="myApp" ng-controller="numesCtrl">
+
+<table border="1" width="100%">
+<tr>
+<th>Nume</th>
+<th>Prenume</th>
+<th>Nota</th>
+</tr>
+<tr ng-repeat="x in numes | orderBy: '-nota'">
+<td>{{x.nume}}</td>
+<td>{{x.prenume}}</td>
+<td>{{x.nota}}</td>
+</tr>
+</table>
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('numesCtrl', function($scope) {
+    $scope.numes = [
+        {nume:'Mihai',prenume:'Turcanu',nota:7.12},
+        {nume:'Adrian',prenume:'Corobca',nota:8.19},
+        {nume:'Vasile',prenume:'Godorogea',nota:9.1},
+        {nume:'Alexei',prenume:'Cioban',nota:6.57},
+        {nume:'Tatiana',prenume:'Savin',nota:9.99},
+        {nume:'Anastasia',prenume:'Temciuc',nota:10},
+        {nume:'Vladislav',prenume:'Gorceag',nota:4.99},
+        {nume:'Cristina',prenume:'Savitchi',nota:5.01}
+        ];
+    $scope.orderByMe = function(x) {
+        $scope.myOrderBy = x;
+    }
+});
+</script>
+
+</body>
+</html>
