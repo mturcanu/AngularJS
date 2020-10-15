@@ -1,0 +1,22 @@
+﻿<div ng-controller="LucrariController">
+	<div class="filtersPane">
+		<h4>Filtre</h4>
+		<p>După nume</p>
+		<input type="text" placeholder="Introdu Numele" ng-model="search.text">
+		<p>După Tip</p>
+		<div ng-repeat="item in tipuri">
+			<input type="checkbox" ng-model="filterItems[item.name]"> {{item.name}}
+		</div>
+		<p>Ordonarea după nume</p>
+		<input type="radio" ng-model="sortOrder" name="ord" value="x.text" ng-click="setOrder('text')"> Crescător<br>
+		<input type="radio" ng-model="sortOrder" name="ord" value="-x.text" ng-click="setOrder('-text')"> Descrescător<br>
+	</div>
+		<div class="w3-container" style="margin-left:40%;">
+			<div class="w3-card-4" style="width: 35%; margin-top: 70px; margin-bottom: 10px; background-color: white" ng-repeat="x in lucrari | orderBy: orderProp | filter: search | filter: tipFiltru">
+				<img src="{{x.image}}" style="width:100%">
+				<div class="w3-container w3-center">
+					<p style="font-size: 20px">{{x.text}}</p>
+				</div>
+			</div>
+		</div>
+</div>

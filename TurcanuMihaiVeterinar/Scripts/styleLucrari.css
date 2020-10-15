@@ -1,0 +1,21 @@
+﻿.filtersPane {
+	position: fixed;
+	margin-top: 70px;
+	margin-bottom: 70px;
+	margin-left: 10%;
+	height: 90%;
+	width: 20%;
+	background-color: #CAE4DB;
+	border: 2px solid #7A9D96;
+	color: #00303F;
+	padding: 10px;
+}
+
+input[type=text]{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}

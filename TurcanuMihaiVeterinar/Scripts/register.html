@@ -1,0 +1,28 @@
+﻿<div>
+	<form class="center" ng-submit="formSubmit()" ng-controller="RegisterController">
+		<img src="../Images/avatar.png" alt="Avatar" class="imgsmaller">
+		<br />
+		<div class="container">
+			<label><b>Nume utilizator</b></label>
+			<input type="text" placeholder="Enter Username" ng-model="username" name="uname" required>
+
+			<label><b>Adresă email</b></label>
+			<input type="text" placeholder="user@email.com" ng-model="email" name="email" required>
+
+			<label><b>Parola</b></label>
+			<input type="password" placeholder="Enter Password" ng-model="password1" name="psw1" required>
+
+			<label><b>Confirmați parola</b></label>
+			<input type="password" placeholder="Enter Password" ng-model="password2" name="psw2" required>
+
+			<label><b>Data nașterii</b></label>
+			<input type="date" ng-model="date" required>
+
+			<button type="submit">Înregistrare</button><span class="error-text">{{ error }}</span>
+
+			<br />
+			<span>Ai deja cont? <a href="#login">Autentificare</a></span>
+			<br />
+		</div>
+	</form>
+</div>

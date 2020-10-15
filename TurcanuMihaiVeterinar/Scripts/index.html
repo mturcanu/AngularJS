@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html ng-app="myApp" ui-router-styles>
+<head>
+    <meta charset="utf-8">
+    <title>Clinica Veterinara Turcanu</title>
+    <link rel="shortcut icon" href="#" />
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link href="stylesApp.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+    <script src="ui-router-styles.js"></script>
+
+    <script src="app.js"></script>
+    <script src="scriptLogin.js"></script>
+    <script src="scriptRegister.js"></script>
+    <script src="scriptHome.js"></script>
+    <script src="scriptLucrari.js"></script>
+</head>
+<body>
+    <div ng-controller="UserController">
+        <ul class="navBar" ng-controller="BarController">
+            <li class="firstLi" ng-show="Title">{{Title}}</li>
+            <li class="navLi" ng-repeat="x in head">
+                <a class="{{x.active}}" href="#{{x.route}}">{{x.name}}</a>
+            </li>
+            <li class="lastLi" ng-show="LoggedIn"><a ng-click="toggleModal()">Hi, {{LoggedIn.username}} !</a></li>
+        </ul>
+        <div>
+            <modal-dialog show="modalShown" width="600px" height="60%">
+                <h3>Datele utilizatorului logat</h3>
+                <p>Nume utilizator: {{LoggedIn.username}}</p>
+                <p>Parola: {{LoggedIn.password}}</p>
+                <p>Email: {{LoggedIn.email}}</p>
+                <p>Data nasterii: {{LoggedIn.date | date:'longDate'}}</p>
+            </modal-dialog>
+        </div>
+    </div>
+       <div ui-view></div>
+</body>
+</html>

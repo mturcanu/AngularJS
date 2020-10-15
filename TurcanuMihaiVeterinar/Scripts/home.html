@@ -1,0 +1,37 @@
+﻿<div class="centerContainer" ng-controller="HomeController">
+    <h3>Tarife – Estimează costul serviciilor noastre</h3>
+    <div style="overflow-x:auto; width:60%; float:left">
+        <table class="tabel">
+            <tr>
+                <th>Serviciu</th>
+                <th>Pret</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="x in servicii">
+                <td>{{ x.nume }}</td>
+                <td>{{ x.pret }} LEI</td>
+                <td><button ng-click="pushToBasket(x)">Adaugă</button></td>
+            </tr>
+        </table>
+    </div>
+    <div style="float: left; margin-left: 5%; width:35%">
+        <div>
+            <table style="overflow-x: auto" ng-show="total">
+                <tr>
+                    <th>Serviciu Ales</th>
+                    <th>Preț</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="x in basket">
+                    <td>{{ x.nume }}</td>
+                    <td>{{ x.pret }} LEI</td>
+                    <td><button ng-click="removeFromBasket(x)">Șterge</button></td>
+                </tr>
+                <tr>
+                    <td><b>TOTAL</b></td>
+                    <td><b>{{ total }} LEI</b></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

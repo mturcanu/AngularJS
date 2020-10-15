@@ -1,0 +1,18 @@
+﻿	<div>
+		<form class="center" ng-submit="formSubmit()" ng-controller="LoginController">
+			<img src="../Images/avatar.png" alt="Avatar" class="imgsmaller">
+			<br />
+			<div class="container">
+				<label><b>Nume utilizator sau adresă email</b></label>
+				<input type="text" placeholder="Enter Username" ng-model="username" name="uname" required>
+
+				<label><b>Parola</b></label>
+				<input type="password" placeholder="Enter Password" ng-model="password" name="psw" required>
+				<button type="submit">Autentificare</button><span class="error-text">{{ error }}</span>
+
+				<br />
+				<span>Nu ai cont? <a href="#/register">Înregistrează-te</a></span>
+				<br />
+			</div>
+		</form>
+	</div>
