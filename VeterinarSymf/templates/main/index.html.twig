@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}Veterinar Turcanu{% endblock %}
+{% block body %}
+
+   {% if works %}
+   <div class=".col-md-1 .offset-md-1">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nume</th>
+                                        <th scope="col">Tip</th>
+                                        <th scope="col">Imagine</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for work in works %}
+                                    <tr>
+                                        <th scope="row">{{ loop.index }}</th>
+                                        <td>{{ work.nume }}</td>
+                                        <td>{{ work.tip.nume }}</td>
+                                        <td><img src="{{ asset('imagini/' ~  work.imagine ) }}" width=200/></td>
+                                        
+                                    </tr>
+                                    {% endfor %}
+                                    </div></div></div>
+
+   {% endif %}
+
+
+{% endblock %}

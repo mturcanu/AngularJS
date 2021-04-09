@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block title %}Adauga Tipuri de Animale{% endblock %}
+{% block body %}
+<div class="row">
+       <div class="col-8 offset-2">
+           {{ form(TipAnimalForm) }}
+       </div>
+   </div>
+   {% if types %}
+   <div class="container py-5 text-white">
+    <div class="row">
+            <div class="col-lg-7 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Tip</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for type in types %}
+                                    <tr>
+                                        <th scope="row">{{ loop.index }}</th>
+                                        <td>{{ type.nume }}</td>
+                                       
+                                        <td>
+                                            <!-- Call to action buttons -->
+                                            <ul class="list-inline m-0" ng-controller="EditController">
+                                                <li class="list-inline-item">
+                                                    <a class="decoration:none;" href="/tip/animal/update/{{type.id}}">
+                                                    <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit">Edit</button>
+                                                    </a>
+                                                <li class="list-inline-item">
+                                                    <a class="decoration:none;" href="/tip/animal/delete/{{type.id}}"><button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete">Delete</button></a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    </div></div></div></div>
+                                    </div>
+   {% endif %}
+{% endblock %}
